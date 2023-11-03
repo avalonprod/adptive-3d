@@ -325,7 +325,25 @@
     }
 
     .bg-gradient {
-        overflow: hidden;
+        position: absolute;
+        bottom: -35%;
+        z-index: -1;
+        max-width: 100vw !important;
+        width: 100vw !important;
+    }
+
+    .bg-wrapper {
+        margin: 0 auto;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .bg-gradient svg {
         position: absolute;
         bottom: -35%;
         z-index: -1;
@@ -335,6 +353,7 @@
         body {
             overflow-x: hidden;
         }
+
         .container {
             width: 500px;
         }
@@ -347,19 +366,20 @@
             width: 500px !important;
         }
 
-        .bg-gradient {
-            /* max-width: 100vw !important;
-            width: 100vw !important; */
-            overflow: hidden;
+        .bg-wrapper {
+
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
         }
 
         .bg-gradient svg {
             position: absolute !important;
-            bottom: 0;
-            left: 0;
-            transform: translate(-10%, 25%);
             width: 1000px !important;
             height: 1000px !important;
+            min-width: 1000px;
+            min-height: 1000px;
+            z-index: 1;
         }
 
         .color-picker {
@@ -369,6 +389,7 @@
         .color-container {
             top: 2%;
         }
+
         .buttons #hackSquatButton {
             margin-right: 20px;
         }
@@ -424,7 +445,7 @@
             max-height: 70vh !important;
         }
 
-        .main-heading  {
+        .main-heading {
             font-size: 12px;
         }
 
@@ -482,28 +503,35 @@
             height: 200px;
             top: -60px;
         }
+
         .color-container {
             top: unset;
             bottom: 103px;
         }
+
         .pill-button {
             top: 3%;
             left: 60%;
         }
-        .pill-button .pillbox{
+
+        .pill-button .pillbox {
             width: 160px;
             height: 34px;
         }
-        .pill-button .pillbox div{
+
+        .pill-button .pillbox div {
             font-size: 14px;
         }
+
         .button-container {
             bottom: 30%;
-        }   
+        }
+
         #legPressButton {
             font-size: 13px;
             padding: 5px;
         }
+
         #hackSquatButton {
             font-size: 13px;
             padding: 5px;
@@ -512,104 +540,131 @@
 
     @media (max-width: 430px) {
         body {
-            overflow-x: hidden;
+            overflow: hidden;
         }
+
         .container {
+
             margin: 0 auto;
             width: 340px;
-            margin-top: 0px;
+            margin-top: 150px;
             height: 70vh !important;
         }
+
         .modelViewerContainer .model-viewer {
             width: 340px !important;
             height: 400px !important;
             top: -40px;
         }
+
         .modelViewerContainer .model-viewer .container {
             width: 340px !important;
             max-height: 70vh !important;
         }
-        .main-heading  {
-            top: -4%;
-            left: 5%;
-            font-size: 8px;
+
+        .main-heading {
+            top: -6%;
+            left: 3.40%;
+            font-size: 10px;
         }
-        .bg-gradient {
-            max-width: 100% !important;
-            width: 100% !important;
+
+        .bg-wrapper {
+
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
         }
+
         .bg-gradient svg {
-            display: block;
-            top: -1280px !important;
-            left: 20%;
-            max-width: 100% !important;
+            position: absolute;
             width: 1000px !important;
             height: 1000px !important;
+            min-width: 1000px;
+            min-height: 1000px;
+            z-index: 100;
+
         }
+
         .color-picker {
-           
             gap: 4px;
         }
-        .color-picker .color-option {
 
+        .color-picker .color-option {
             width: 28.40px;
             height: 28.40px;
             margin-right: 5px;
             margin-left: 5px;
         }
+
         .buttons #hackSquatButton {
             margin-right: 20px;
         }
+
         .sub-heading {
-            display: none;
+            font-size: 6px;
+
+            top: -10px;
+            left: 4px;
         }
+
         .seperator {
             width: 68px;
             top: 10px;
             left: 13px;
         }
+
         .seperator-2 {
             width: 240px;
             top: 100px
         }
+
         .viewer-shell svg {
+
             position: relative;
             top: -90px;
             left: 3px;
             min-width: 200px !important;
             height: 500px;
         }
+
         .controller-shell {
             align-items: center;
             min-width: 320px;
             height: 200px;
             top: -154px;
         }
+
         .color-container {
             top: unset;
             bottom: 100px;
         }
+
         .pill-button {
-            width: 140px;
-            height: 20px;
+            width: 110px;
+            height: 14px;
             top: -30px;
-            left: 59%;
+            left: 70%;
         }
-        .pill-button .pillbox{
-            width: 140px;
-            height: 30px;
+
+        .pill-button .pillbox {
+            width: 110px;
+            height: 26px;
             left: 30%;
         }
-        .pill-button .pillbox div{
+
+        .pill-button .pillbox div {
             font-size: 14px;
         }
+
         .button-container {
             bottom: 34%;
-        }   
+        }
+
         #legPressButton {
             font-size: 10px;
             padding: 5px;
         }
+
         #hackSquatButton {
             font-size: 10px;
             padding: 5px;
@@ -618,139 +673,143 @@
 </style>
 
 <body>
-    <div class="container">
-        <div class="viewer-shell">
-            <div class="bg-gradient">
-                <svg width="1272" height="1193" viewBox="0 0 1272 1193" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.15" filter="url(#filter0_f_10_893)">
-                        <path
-                            d="M715.5 268C670.521 323.078 245.919 -3.55606 169.948 492.438C162.341 542.099 251.438 994.646 349.623 1016.51C447.808 1038.38 490.282 1005.38 562.699 957.812C635.116 910.246 570.407 952.096 698.359 982.784C826.31 1013.47 1049.34 659.793 1083.99 612.994C1118.64 566.195 1102.65 491.393 1052.45 416.975C1002.24 342.556 930.085 5.23428 715.5 268Z"
-                            fill="url(#paint0_radial_10_893)" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_f_10_893" x="0.493652" y="0.407227" width="1271" height="1192"
-                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="84.5" result="effect1_foregroundBlur_10_893" />
-                        </filter>
-                        <radialGradient id="paint0_radial_10_893" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                            gradientTransform="translate(556.589 657.096) rotate(11.1345) scale(385.417 494.304)">
-                            <stop offset="0.856085" stop-color="#AC48F8" />
-                            <stop offset="1" stop-color="#FF7500" />
-                        </radialGradient>
-                    </defs>
+    <div class="bg-wrapper">
+        <div class="container">
+            <div class="viewer-shell">
+                <div class="bg-gradient">
+                    <svg viewBox="0 0 1272 1193" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.15" filter="url(#filter0_f_10_893)">
+                            <path
+                                d="M715.5 268C670.521 323.078 245.919 -3.55606 169.948 492.438C162.341 542.099 251.438 994.646 349.623 1016.51C447.808 1038.38 490.282 1005.38 562.699 957.812C635.116 910.246 570.407 952.096 698.359 982.784C826.31 1013.47 1049.34 659.793 1083.99 612.994C1118.64 566.195 1102.65 491.393 1052.45 416.975C1002.24 342.556 930.085 5.23428 715.5 268Z"
+                                fill="url(#paint0_radial_10_893)" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_10_893" x="0.493652" y="0.407227" width="1271" height="1192"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feGaussianBlur stdDeviation="84.5" result="effect1_foregroundBlur_10_893" />
+                            </filter>
+                            <radialGradient id="paint0_radial_10_893" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(556.589 657.096) rotate(11.1345) scale(385.417 494.304)">
+                                <stop offset="0.856085" stop-color="#AC48F8" />
+                                <stop offset="1" stop-color="#FF7500" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+
+                </div>
+
+                <svg width="722" height="806" viewBox="0 0 722 806" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1 85.4971V780.497C1 794.304 12.1929 805.497 26 805.497H696C709.807 805.497 721 794.304 721 780.497V110.497C721 96.6899 709.966 85.4971 696.159 85.4971H208.996C195.189 85.4971 184 74.3042 184 60.4971V25.4971C184 11.69 172.807 0.49707 159 0.49707H92.5H26C12.1929 0.49707 1 11.69 1 25.4971V85.4971Z"
+                        fill="white" stroke="black" stroke-opacity="0.03" />
                 </svg>
 
-            </div>
+                <div class="pill-button-container">
+                    <div class="pill-button">
+                        <!-- white pill-->
 
-            <svg width="722" height="806" viewBox="0 0 722 806" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M1 85.4971V780.497C1 794.304 12.1929 805.497 26 805.497H696C709.807 805.497 721 794.304 721 780.497V110.497C721 96.6899 709.966 85.4971 696.159 85.4971H208.996C195.189 85.4971 184 74.3042 184 60.4971V25.4971C184 11.69 172.807 0.49707 159 0.49707H92.5H26C12.1929 0.49707 1 11.69 1 25.4971V85.4971Z"
-                    fill="white" stroke="black" stroke-opacity="0.03" />
-            </svg>
-
-            <div class="pill-button-container">
-                <div class="pill-button">
-                    <!-- white pill-->
-
-                    <div class="pillbox">
-                        <div class="pillBoxText">Contact Us</div>
+                        <div class="pillbox">
+                            <div class="pillBoxText">Contact Us</div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="seperator"></div>
+
+            </div>
+            <div class="modelViewerContainer">
+                <model-viewer id="modelViewer" class="model-viewer" src="BoomBox.glb" ar
+                    ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+
+
+                    <div class="progress-bar hide" slot="progress-bar">
+
+                        <div class="update-bar"></div>
+                    </div>
+                    <button slot="ar-button" id="ar-button">
+                        View in your space
+                    </button>
+
+                </model-viewer>
+
             </div>
 
-            <div class="seperator"></div>
 
-        </div>
-        <div class="modelViewerContainer">
-            <model-viewer id="modelViewer" class="model-viewer" src="BoomBox.glb" ar
-                ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
-
-
-                <div class="progress-bar hide" slot="progress-bar">
-
-                    <div class="update-bar"></div>
-                </div>
-                <button slot="ar-button" id="ar-button">
-                    View in your space
-                </button>
-
-            </model-viewer>
-
-        </div>
-
-
-        <div class="main-heading">
-            <h1>LOLA</h1>
-        </div>
-
-        <div class="sub-heading">
-            <h2>Custom 3D Viewer</h2>
-        </div>
-
-
-
-
-        <div class="controller-shell">
-            <svg width="550" height="134" viewBox="0 0 550 134" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M535 -0.00292969H15C6.71573 -0.00292969 0 6.7128 0 14.9971V44.9971C0 53.2813 6.71573 59.9971 15 59.9971H45.5C53.7843 59.9971 60.5 66.7128 60.5 74.9971V118.997C60.5 127.281 67.2157 133.997 75.5 133.997H474.5C482.784 133.997 489.5 127.281 489.5 118.997V74.9971C489.5 66.7128 496.216 59.9971 504.5 59.9971H535C543.284 59.9971 550 53.2813 550 44.9971V14.9971C550 6.7128 543.284 -0.00292969 535 -0.00292969Z"
-                    fill="white" />
-                <path
-                    d="M15 0.49707H535C543.008 0.49707 549.5 6.98894 549.5 14.9971V44.9971C549.5 53.0052 543.008 59.4971 535 59.4971H504.5C495.94 59.4971 489 66.4367 489 74.9971V118.997C489 127.005 482.508 133.497 474.5 133.497H75.5C67.4919 133.497 61 127.005 61 118.997V74.9971C61 66.4367 54.0604 59.4971 45.5 59.4971H15C6.99187 59.4971 0.5 53.0052 0.5 44.9971V14.9971C0.5 6.98894 6.99187 0.49707 15 0.49707Z"
-                    stroke="black" stroke-opacity="0.03" />
-            </svg>
-
-            <div class="color-container">
-                <div class="color-picker">
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(0,0,0,1) 25%,rgba(120,120,120,1) 100%)"
-                        href="javascript:changeVariant('Black');"></a>
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(214,214,214,1) 0%,rgba(160,160,160,1) 41%,rgba(113,113,113,1) 95%)"
-                        href="javascript:changeVariant('Grey')"></a>
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(255,255,255,1) 33%,rgba(244,244,244,1) 99%);"
-                        href="javascript:changeVariant('White')"></a>
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(255,169,163,1) 0%,rgba(247,62,49,1) 41%,rgba(181,59,11,1) 95%);"
-                        href="javascript:changeVariant('Red');"></a>
-
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(255,254,239,1) 0%,rgba(253,255,137,1) 44%,rgba(255,255,12,1) 99%);"
-                        href="javascript:changeVariant('Yellow');"></a>
-
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(160,255,97,1) 0%,rgba(101,239,9,1) 41%,rgba(36,153,9,1) 95%);"
-                        href="javascript:changeVariant('Green');"></a>
-
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(163,209,255,1) 0%,rgba(49,148,247,1) 41%,rgba(11,60,181,1) 95%);"
-                        href="javascript:changeVariant('Blue');"></a>
-
-
-                    <a class="color-option"
-                        style="background: radial-gradient(ellipse at left top, rgba(219,173,255,1) 0%,rgba(172,72,248,1) 41%,rgba(170,13,213,1) 95%);"
-                        href="javascript:changeVariant('Purple');"></a>
-                </div>
+            <div class="main-heading">
+                <h1>LOLA</h1>
             </div>
 
-            <div class="seperator-2"></div>
+            <div class="sub-heading">
+                <h2>Custom 3D Viewer</h2>
+            </div>
 
-            <div class="button-container">
-                <div class="buttons">
 
-                    <button id="hackSquatButton">
-                        <div class="button-text-2"></div>Hack Squat Position
+
+
+            <div class="controller-shell">
+                <svg width="550" height="134" viewBox="0 0 550 134" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M535 -0.00292969H15C6.71573 -0.00292969 0 6.7128 0 14.9971V44.9971C0 53.2813 6.71573 59.9971 15 59.9971H45.5C53.7843 59.9971 60.5 66.7128 60.5 74.9971V118.997C60.5 127.281 67.2157 133.997 75.5 133.997H474.5C482.784 133.997 489.5 127.281 489.5 118.997V74.9971C489.5 66.7128 496.216 59.9971 504.5 59.9971H535C543.284 59.9971 550 53.2813 550 44.9971V14.9971C550 6.7128 543.284 -0.00292969 535 -0.00292969Z"
+                        fill="white" />
+                    <path
+                        d="M15 0.49707H535C543.008 0.49707 549.5 6.98894 549.5 14.9971V44.9971C549.5 53.0052 543.008 59.4971 535 59.4971H504.5C495.94 59.4971 489 66.4367 489 74.9971V118.997C489 127.005 482.508 133.497 474.5 133.497H75.5C67.4919 133.497 61 127.005 61 118.997V74.9971C61 66.4367 54.0604 59.4971 45.5 59.4971H15C6.99187 59.4971 0.5 53.0052 0.5 44.9971V14.9971C0.5 6.98894 6.99187 0.49707 15 0.49707Z"
+                        stroke="black" stroke-opacity="0.03" />
+                </svg>
+
+                <div class="color-container">
+                    <div class="color-picker">
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(0,0,0,1) 25%,rgba(120,120,120,1) 100%)"
+                            href="javascript:changeVariant('Black');"></a>
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(214,214,214,1) 0%,rgba(160,160,160,1) 41%,rgba(113,113,113,1) 95%)"
+                            href="javascript:changeVariant('Grey')"></a>
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(255,255,255,1) 33%,rgba(244,244,244,1) 99%);"
+                            href="javascript:changeVariant('White')"></a>
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(255,169,163,1) 0%,rgba(247,62,49,1) 41%,rgba(181,59,11,1) 95%);"
+                            href="javascript:changeVariant('Red');"></a>
+
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(255,254,239,1) 0%,rgba(253,255,137,1) 44%,rgba(255,255,12,1) 99%);"
+                            href="javascript:changeVariant('Yellow');"></a>
+
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(160,255,97,1) 0%,rgba(101,239,9,1) 41%,rgba(36,153,9,1) 95%);"
+                            href="javascript:changeVariant('Green');"></a>
+
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(163,209,255,1) 0%,rgba(49,148,247,1) 41%,rgba(11,60,181,1) 95%);"
+                            href="javascript:changeVariant('Blue');"></a>
+
+
+                        <a class="color-option"
+                            style="background: radial-gradient(ellipse at left top, rgba(219,173,255,1) 0%,rgba(172,72,248,1) 41%,rgba(170,13,213,1) 95%);"
+                            href="javascript:changeVariant('Purple');"></a>
+                    </div>
                 </div>
 
-                </button>
+                <div class="seperator-2"></div>
+
+                <div class="button-container">
+                    <div class="buttons">
+
+                        <button id="hackSquatButton">
+                            <div class="button-text-2"></div>Hack Squat Position
+                    </div>
+
+                    </button>
 
 
-                <button id="legPressButton">
-                    <div class="button-text-1">Leg Press Position</div>
-                </button>
+                    <button id="legPressButton">
+                        <div class="button-text-1">Leg Press Position</div>
+                    </button>
+
+                </div>
+
 
             </div>
 
@@ -759,9 +818,8 @@
 
 
     </div>
-
-
     </div>
+
 
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
