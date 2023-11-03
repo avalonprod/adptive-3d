@@ -364,6 +364,9 @@
             gap: 3px;
         }
 
+        .color-container {
+            top: 2%;
+        }
         .buttons #hackSquatButton {
             margin-right: 20px;
         }
@@ -393,6 +396,7 @@
         }
 
         .pill-button {
+            top: 4%;
             left: 63%;
         }
 
@@ -406,7 +410,6 @@
         .container {
             width: 400px;
             margin-top: 120px;
-
         }
 
         .modelViewerContainer .model-viewer {
@@ -477,20 +480,24 @@
             height: 200px;
             top: unset;
         }
-
         .color-container {
             top: unset;
             bottom: 103px;
         }
-
         .pill-button {
-            left: 54%;
+            top: 3%;
+            left: 60%;
         }
-
+        .pill-button .pillbox{
+            width: 160px;
+            height: 34px;
+        }
+        .pill-button .pillbox div{
+            font-size: 14px;
+        }
         .button-container {
             bottom: 30%;
         }   
-
         #legPressButton {
             font-size: 13px;
             padding: 5px;
@@ -503,31 +510,27 @@
 
     @media (max-width: 430px) {
         .container {
-            width: 300px;
-            margin-top: 120px;
+            width: 330px;
+            margin-top: 50px;
+            height: 100vh !important;
         }
-
         .modelViewerContainer .model-viewer {
-            width: 300px !important;
+            width: 330px !important;
             height: 500px !important;
         }
-
         .modelViewerContainer .model-viewer .container {
-            width: 300px !important;
+            width: 330px !important;
             max-height: 70vh !important;
         }
-
         .main-heading  {
-            top: 4.60%;
+            top: 3.50%;
             left: 4%;
             font-size: 8px;
         }
-
         .bg-gradient {
             max-width: 100vw !important;
             width: 100vw !important;
         }
-
         .bg-gradient svg {
             top: -1250px !important;
             left: 0%;
@@ -535,37 +538,30 @@
             width: 1000px !important;
             height: 1000px !important;
         }
-
         .color-picker {
             gap: 0px;
         }
-
         .color-picker .color-option {
             width: 24px;
             height: 24px;
             margin-right: 5px;
             margin-left: 5px;
         }
-
         .buttons #hackSquatButton {
             margin-right: 20px;
         }
-
         .sub-heading {
             display: none;
         }
-
         .seperator {
             width: 60px;
             top: 80px;
             left: 13px;
         }
-
         .seperator-2 {
             width: 200px;
             top: 100px
         }
-
         .viewer-shell svg {
             position: relative;
             top: -82px;
@@ -573,40 +569,33 @@
             min-width: 200px !important;
             height: 600px;
         }
-
-
         .controller-shell {
             align-items: center;
-            min-width: 300px;
+            min-width: 320px;
             height: 200px;
-            top: unset;
+            top: -80px;
         }
-
         .color-container {
             top: unset;
             bottom: 98px;
         }
-
         .pill-button {
             width: 140px;
             height: 20px;
-            top: 52px;
+            top: 34px;
+            left: 55%;
         }
         .pill-button .pillbox{
             width: 140px;
             height: 30px;
             left: 30%;
-
         }
-
         .pill-button .pillbox div{
             font-size: 14px;
         }
-
         .button-container {
             bottom: 34%;
         }   
-
         #legPressButton {
             font-size: 10px;
             padding: 5px;
